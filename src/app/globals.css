@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #07070d;
+  --foreground: #f6f7ff;
+  --panel: rgba(255, 255, 255, 0.06);
+  --panel-strong: rgba(255, 255, 255, 0.1);
+  --accent: #10b981;
+  --accent-soft: #14b8a6;
 }
 
 @theme inline {
@@ -14,13 +18,242 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #07070d;
+    --foreground: #f6f7ff;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: -35%;
+  pointer-events: none;
+  z-index: -2;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(16, 185, 129, 0.32), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(20, 184, 166, 0.28), transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(132, 204, 22, 0.24), transparent 45%);
+  filter: blur(40px);
+  animation: drift 20s ease-in-out infinite alternate;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.35) transparent;
+}
+
+*::selection {
+  background: rgba(16, 185, 129, 0.35);
+  color: #ffffff;
+}
+
+@keyframes drift {
+  from {
+    transform: translateY(-1.5%) translateX(-1%);
+  }
+  to {
+    transform: translateY(1.5%) translateX(1%);
+  }
+}
+
+@media (max-width: 768px) {
+  body::before {
+    inset: -25%;
+    filter: blur(28px);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.reveal-section {
+  opacity: 0;
+  transform: translateY(32px) scale(0.98);
+  transition:
+    opacity 700ms ease,
+    transform 700ms ease;
+}
+
+.reveal-section.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.popup-in {
+  animation: popup 420ms cubic-bezier(0.2, 0.9, 0.25, 1);
+}
+
+@keyframes popup {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.slide-in {
+  animation: slideIn 520ms ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popperFall {
+  0% {
+    transform: translateY(-20%) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(120%) rotate(220deg);
+    opacity: 0;
+  }
+}
+
+.step-enter {
+  animation: stepEnter 360ms cubic-bezier(0.2, 0.85, 0.2, 1);
+}
+
+.step-leave {
+  animation: stepLeave 250ms ease-in forwards;
+}
+
+@keyframes stepEnter {
+  from {
+    opacity: 0;
+    transform: translateY(22px) scale(0.98);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes stepLeave {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-16px) scale(0.985);
+    filter: blur(2px);
+  }
+}
+
+.next-burst {
+  opacity: 0;
+  animation: nextBurst 620ms ease-out;
+}
+
+@keyframes nextBurst {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.2) rotate(0deg);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-30px) scale(1.25) rotate(25deg);
+  }
+}
+
+.motion-card {
+  animation: settleFromBottom 620ms cubic-bezier(0.2, 0.85, 0.2, 1) both;
+}
+
+.motion-left {
+  animation-name: settleFromLeft;
+}
+
+.motion-right {
+  animation-name: settleFromRight;
+}
+
+.motion-up {
+  animation-name: settleFromBottom;
+}
+
+.motion-card:nth-child(1) {
+  animation-delay: 40ms;
+}
+
+.motion-card:nth-child(2) {
+  animation-delay: 90ms;
+}
+
+.motion-card:nth-child(3) {
+  animation-delay: 140ms;
+}
+
+@keyframes settleFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-34px) translateY(10px) scale(0.96);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes settleFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(34px) translateY(10px) scale(0.96);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes settleFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(28px) scale(0.96);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
 }
