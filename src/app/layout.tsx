@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Romil's Birthday Surprise",
-  description: "A dark, modern birthday surprise website for Romil Saini.",
+  description: "A dark, modern birthday surprise website for Gorgous 24.",
 };
 
 export default function RootLayout({

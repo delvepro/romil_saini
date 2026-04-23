@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #07070d;
-  --foreground: #f6f7ff;
-  --panel: rgba(255, 255, 255, 0.06);
-  --panel-strong: rgba(255, 255, 255, 0.1);
-  --accent: #10b981;
-  --accent-soft: #14b8a6;
+  --background: #0b0a07;
+  --foreground: #fef3c7;
+  --panel: rgba(23, 23, 23, 0.78);
+  --panel-strong: rgba(38, 38, 38, 0.92);
+  --accent: #f59e0b;
+  --accent-soft: #facc15;
 }
 
 @theme inline {
@@ -18,8 +18,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #07070d;
-    --foreground: #f6f7ff;
+    --background: #0b0a07;
+    --foreground: #fef3c7;
   }
 }
 
@@ -38,21 +38,21 @@ body::before {
   pointer-events: none;
   z-index: -2;
   background:
-    radial-gradient(circle at 20% 20%, rgba(16, 185, 129, 0.32), transparent 40%),
-    radial-gradient(circle at 80% 30%, rgba(20, 184, 166, 0.28), transparent 40%),
-    radial-gradient(circle at 50% 80%, rgba(132, 204, 22, 0.24), transparent 45%);
+    radial-gradient(circle at 20% 20%, rgba(245, 158, 11, 0.26), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(234, 179, 8, 0.2), transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(217, 119, 6, 0.2), transparent 45%);
   filter: blur(40px);
   animation: drift 20s ease-in-out infinite alternate;
 }
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.35) transparent;
+  scrollbar-color: rgba(245, 158, 11, 0.5) transparent;
 }
 
 *::selection {
-  background: rgba(16, 185, 129, 0.35);
-  color: #ffffff;
+  background: rgba(245, 158, 11, 0.35);
+  color: #1c1917;
 }
 
 @keyframes drift {

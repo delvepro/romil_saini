@@ -108,10 +108,10 @@ export default function Home() {
   };
 
   return (
-    <main className="relative mx-auto flex min-h-screen w-full max-w-6xl flex-col justify-center px-3 py-6 text-slate-100 sm:px-8 sm:py-10">
+    <main className="relative mx-auto flex min-h-screen w-full max-w-6xl flex-col justify-center px-3 py-6 text-amber-50 sm:px-8 sm:py-10">
       <div className="pointer-events-none absolute inset-x-0 top-10 -z-10 h-[420px] bg-[radial-gradient(circle_at_20%_20%,rgba(16,185,129,0.28),transparent_42%),radial-gradient(circle_at_75%_10%,rgba(45,212,191,0.22),transparent_40%),radial-gradient(circle_at_55%_85%,rgba(132,204,22,0.22),transparent_45%)] blur-3xl" />
 
-      <header className="supports-backdrop-filter:bg-white/10 sticky top-2 z-30 mb-4 rounded-2xl border border-white/20 bg-white/10 px-3 py-2 shadow-[0_14px_45px_rgba(2,6,23,0.45)] backdrop-blur-2xl sm:top-4 sm:mb-6 sm:px-5 sm:py-3">
+      <header className="supports-backdrop-filter:bg-neutral-900/75 sticky top-2 z-30 mb-4 rounded-2xl border border-amber-300/40 bg-neutral-900/75 px-3 py-2 shadow-[0_14px_45px_rgba(245,158,11,0.18)] backdrop-blur-2xl sm:top-4 sm:mb-6 sm:px-5 sm:py-3">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-1.5 sm:gap-2">
             {[1, 2, 3, 4, 5, 6].map((item, index) => (
@@ -119,8 +119,8 @@ export default function Home() {
                 key={item}
                 className={`h-2 w-6 rounded-full border transition-all duration-300 sm:w-12 ${
                   step >= index
-                    ? "border-emerald-200/70 bg-linear-to-r from-emerald-300 to-teal-300 shadow-[0_0_20px_rgba(16,185,129,0.58)]"
-                    : "border-white/20 bg-white/10"
+                    ? "border-amber-300/70 bg-linear-to-r from-amber-400 to-yellow-300 shadow-[0_0_20px_rgba(245,158,11,0.58)]"
+                    : "border-amber-200/35 bg-neutral-800/80"
                 }`}
               />
             ))}
@@ -128,7 +128,7 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="relative overflow-hidden rounded-2xl border border-white/20 bg-white/8 p-4 shadow-[0_18px_70px_rgba(2,6,23,0.5)] backdrop-blur-2xl sm:rounded-[28px] sm:p-10">
+      <section className="relative overflow-hidden rounded-2xl border border-amber-300/35 bg-neutral-900/75 p-4 shadow-[0_18px_70px_rgba(245,158,11,0.2)] backdrop-blur-2xl sm:rounded-[28px] sm:p-10">
         <div className="pointer-events-none absolute -left-16 top-8 h-44 w-44 rounded-full bg-emerald-500/25 blur-3xl" />
         <div className="pointer-events-none absolute -right-10 bottom-0 h-44 w-44 rounded-full bg-teal-500/25 blur-3xl" />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0.2)_0%,rgba(255,255,255,0.03)_35%,rgba(255,255,255,0.02)_100%)] opacity-50" />
@@ -153,10 +153,10 @@ export default function Home() {
           </div>
           {step === 0 && (
             <div className="slide-in text-center">
-              <h1 className="bg-linear-to-r from-white via-emerald-100 to-teal-100 bg-clip-text text-2xl font-extrabold text-transparent drop-shadow-[0_0_22px_rgba(16,185,129,0.32)] sm:text-5xl">
+              <h1 className="bg-linear-to-r from-amber-300 via-yellow-200 to-amber-400 bg-clip-text text-2xl font-extrabold text-transparent drop-shadow-[0_0_12px_rgba(245,158,11,0.35)] sm:text-5xl">
                 Pehle Cake Cut Karein
               </h1>
-              <p className="mt-2 text-sm text-slate-200/90 sm:text-base">
+              <p className="mt-2 text-sm text-amber-100/85 sm:text-base">
                 Countdown to 24-04-2026 starts now.
               </p>
               <div className="mt-6 text-7xl sm:text-9xl" style={{ animation: "float 3.2s ease-in-out infinite" }}>
@@ -171,17 +171,17 @@ export default function Home() {
                 ].map((item) => (
                   <div
                     key={item.label}
-                    className="motion-card motion-up rounded-2xl border border-white/25 bg-white/9 px-3 py-3 text-center shadow-[0_12px_30px_rgba(15,23,42,0.4)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(16,185,129,0.25)] sm:px-4 sm:py-4"
+                    className="motion-card motion-up rounded-2xl border border-amber-300/35 bg-neutral-800/85 px-3 py-3 text-center shadow-[0_12px_30px_rgba(245,158,11,0.16)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_16px_40px_rgba(245,158,11,0.24)] sm:px-4 sm:py-4"
                   >
                     <p className="text-xl font-bold sm:text-3xl">{item.value}</p>
-                    <p className="text-xs uppercase tracking-[0.2em] text-slate-200/80">
+                    <p className="text-xs uppercase tracking-[0.2em] text-amber-100/75">
                       {item.label}
                     </p>
                   </div>
                 ))}
               </div>
               {countdown.isDone && (
-                <p className="mt-4 text-sm font-semibold text-emerald-300">
+                <p className="mt-4 text-sm font-semibold text-amber-300">
                   Time up! Click Next for the next surprise.
                 </p>
               )}
@@ -190,9 +190,9 @@ export default function Home() {
 
           {step === 1 && (
             <div className="slide-in grid gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-center">
-              <div className="motion-card motion-left rounded-2xl border border-white/25 bg-white/11 p-5 text-slate-100 shadow-[0_16px_40px_rgba(15,23,42,0.4)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-emerald-200/45">
+              <div className="motion-card motion-left rounded-2xl border border-amber-300/35 bg-neutral-800/85 p-5 text-amber-50 shadow-[0_16px_40px_rgba(245,158,11,0.16)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-amber-300/55">
                 <h2 className="mt-2 text-2xl font-bold">About Your Cuteness</h2>
-                <p className="mt-4 text-sm leading-relaxed text-slate-200/90 sm:text-base">
+                <p className="mt-4 text-sm leading-relaxed text-amber-100/90 sm:text-base">
                   Pehli baat to ye ki tumhari smile ka level bilkul premium hai, full
                   heart-melting, aur tumhari vibe aisi hai ki boring se boring din bhi
                   highlight reel ban jata hai. Tum jab room me aati ho to energy
@@ -208,7 +208,7 @@ export default function Home() {
                   queen, thodi si meme machine, aur full-time happiness supplier bhi.
                 </p>
               </div>
-              <div className="motion-card motion-right overflow-hidden rounded-2xl border border-emerald-200/35 bg-white/7 p-3 shadow-[0_16px_40px_rgba(15,23,42,0.5)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="motion-card motion-right overflow-hidden rounded-2xl border border-amber-300/35 bg-neutral-800/85 p-3 shadow-[0_16px_40px_rgba(245,158,11,0.16)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1">
                 <Image
                   src="/media/Snapchat-848168237.jpg"
                   alt="Beauty portrait"
@@ -223,17 +223,17 @@ export default function Home() {
 
           {step === 2 && (
             <div className="slide-in">
-            <h2 className="bg-linear-to-r from-white to-emerald-100 bg-clip-text text-2xl font-bold text-transparent sm:text-3xl">
+            <h2 className="bg-linear-to-r from-amber-300 to-yellow-200 bg-clip-text text-2xl font-bold text-transparent sm:text-3xl">
               Some Cute Images
             </h2>
-            <p className="mt-2 text-sm text-slate-200/90 sm:text-base">
+            <p className="mt-2 text-sm text-amber-100/85 sm:text-base">
               Har photo mein tum aur bhi zyada pretty lagti ho.
             </p>
             <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {imageMemories.slice(0, 6).map((item) => (
                 <div
                   key={item.src}
-                  className="motion-card motion-up rounded-2xl border border-white/25 bg-white/8 p-2 shadow-[0_14px_35px_rgba(15,23,42,0.45)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-emerald-200/45 hover:shadow-[0_20px_45px_rgba(16,185,129,0.25)]"
+                  className="motion-card motion-up rounded-2xl border border-amber-300/35 bg-neutral-800/85 p-2 shadow-[0_14px_35px_rgba(245,158,11,0.16)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-amber-300/55 hover:shadow-[0_20px_45px_rgba(245,158,11,0.24)]"
                 >
                   <Image
                     src={item.src}
@@ -250,16 +250,16 @@ export default function Home() {
 
           {step === 3 && (
             <div className="slide-in text-center">
-            <h2 className="bg-linear-to-r from-white via-emerald-100 to-teal-100 bg-clip-text text-3xl font-bold text-transparent sm:text-4xl">
-              Our Future
+            <h2 className="bg-linear-to-r from-amber-300 via-yellow-200 to-amber-400 bg-clip-text text-3xl font-bold text-transparent sm:text-4xl">
+              Your Future
             </h2>
-            <p className="mx-auto mt-4 max-w-3xl text-sm leading-relaxed text-slate-200/90 sm:text-lg">
-              Future mein aur bhi zyada smiles, more trips, more late-night
-              talks, more dreams, and endless memories with you. I want every
-              coming birthday to be even more special than this one.
+            <p className="mx-auto mt-4 max-w-3xl text-sm leading-relaxed text-amber-100/90 sm:text-lg">
+              Aage life me aur zyada smiles, new opportunities, and strong
+              achievements milein. As a colleague, I genuinely wish every
+              coming birthday brings you more happiness and success.
             </p>
-            <div className="motion-card motion-up mt-8 rounded-2xl border border-white/25 bg-white/10 p-5 text-left shadow-[0_16px_40px_rgba(15,23,42,0.42)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1">
-              <p className="text-sm leading-relaxed text-slate-100">
+            <div className="motion-card motion-up mt-8 rounded-2xl border border-amber-300/35 bg-neutral-800/85 p-5 text-left shadow-[0_16px_40px_rgba(245,158,11,0.16)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1">
+              <p className="text-sm leading-relaxed text-amber-100/90">
                 Best future wishes:
                 <br />- Career mein hamesha growth mile.
                 <br />- Har goal easily achieve ho.
@@ -287,21 +287,21 @@ export default function Home() {
                 </span>
               ))}
             </div>
-            <h2 className="bg-linear-to-r from-white via-emerald-100 to-teal-100 bg-clip-text text-center text-3xl font-extrabold text-transparent drop-shadow-[0_0_20px_rgba(16,185,129,0.3)] sm:text-5xl">
-              Happy Birthday Romil Saini
+            <h2 className="bg-linear-to-r from-amber-300 via-yellow-200 to-amber-400 bg-clip-text text-center text-3xl font-extrabold text-transparent drop-shadow-[0_0_12px_rgba(245,158,11,0.35)] sm:text-5xl">
+              Happy Birthday Gorgous 24
             </h2>
-            <p className="mt-3 text-center text-sm text-slate-100/90 sm:text-base">
+            <p className="mt-3 text-center text-sm text-amber-100/85 sm:text-base">
               Party poppers on, birthday mode on.
             </p>
-            <div className="motion-card motion-up relative mx-auto mt-7 w-full max-w-4xl overflow-hidden rounded-3xl border border-emerald-200/45 bg-white/10 p-4 shadow-[0_20px_50px_rgba(15,23,42,0.5)] backdrop-blur-2xl sm:p-6">
+            <div className="motion-card motion-up relative mx-auto mt-7 w-full max-w-4xl overflow-hidden rounded-3xl border border-amber-300/35 bg-neutral-800/85 p-4 shadow-[0_20px_50px_rgba(245,158,11,0.2)] backdrop-blur-2xl sm:p-6">
               <div className="pointer-events-none absolute -left-8 top-0 h-36 w-36 rounded-full bg-emerald-400/30 blur-3xl" />
               <div className="pointer-events-none absolute -right-8 bottom-0 h-40 w-40 rounded-full bg-teal-400/30 blur-3xl" />
-              <div className="relative rounded-2xl border border-white/30 bg-white/8 px-5 py-14 text-center sm:px-8 sm:py-20">
-                <h3 className="bg-linear-to-r from-white via-emerald-100 to-teal-100 bg-clip-text text-3xl font-extrabold text-transparent drop-shadow-[0_0_20px_rgba(16,185,129,0.35)] sm:text-6xl">
+              <div className="relative rounded-2xl border border-amber-300/35 bg-neutral-800/90 px-5 py-14 text-center sm:px-8 sm:py-20">
+                <h3 className="bg-linear-to-r from-amber-300 via-yellow-200 to-amber-400 bg-clip-text text-3xl font-extrabold text-transparent drop-shadow-[0_0_12px_rgba(245,158,11,0.35)] sm:text-6xl">
                   Happy Birthday
                 </h3>
-                <p className="mt-3 text-lg font-semibold text-emerald-100 sm:text-2xl">
-                  Romil Saini
+                <p className="mt-3 text-lg font-semibold text-amber-200 sm:text-2xl">
+                  Gorgous 24
                 </p>
               </div>
             </div>
@@ -311,24 +311,24 @@ export default function Home() {
           {step === 5 && (
             <div className="slide-in text-center">
               <div
-                className="motion-card motion-up mx-auto mt-2 w-fit rounded-3xl border border-emerald-300/50 bg-emerald-500/18 px-6 py-5 shadow-[0_10px_30px_rgba(16,185,129,0.25)] backdrop-blur-xl"
+                className="motion-card motion-up mx-auto mt-2 w-fit rounded-3xl border border-amber-300/50 bg-amber-500/20 px-6 py-5 shadow-[0_10px_30px_rgba(245,158,11,0.28)] backdrop-blur-xl"
                 style={{ animation: "float 2.6s ease-in-out infinite" }}
               >
                 <div className="text-7xl sm:text-8xl">😡🏏</div>
               </div>
-              <div className="motion-card motion-up mx-auto mt-6 max-w-2xl rounded-2xl border border-white/25 bg-white/11 p-5 shadow-[0_16px_40px_rgba(15,23,42,0.44)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1">
-                <p className="mt-3 text-xl font-bold leading-relaxed text-slate-100 sm:text-2xl">
+              <div className="motion-card motion-up mx-auto mt-6 max-w-2xl rounded-2xl border border-amber-300/35 bg-neutral-800/85 p-5 shadow-[0_16px_40px_rgba(245,158,11,0.16)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1">
+                <p className="mt-3 text-xl font-bold leading-relaxed text-amber-100 sm:text-2xl">
                   Bhaag kaha rhi h... party deke jana pdega!
                 </p>
               </div>
-              <div className="motion-card motion-up mx-auto mt-6 flex w-full max-w-2xl flex-col gap-3 rounded-2xl border border-white/20 bg-white/8 p-3 shadow-[0_14px_36px_rgba(15,23,42,0.4)] backdrop-blur-xl sm:flex-row sm:p-4">
+              <div className="motion-card motion-up mx-auto mt-6 flex w-full max-w-2xl flex-col gap-3 rounded-2xl border border-amber-300/35 bg-neutral-800/85 p-3 shadow-[0_14px_36px_rgba(245,158,11,0.16)] backdrop-blur-xl sm:flex-row sm:p-4">
                 <button
                   type="button"
                   onClick={() => setPartyAnswer("no")}
                   className={`flex-1 rounded-xl border px-3 py-2 text-xs font-semibold capitalize transition-all duration-300 sm:px-4 sm:text-sm ${
                     partyAnswer === "no"
-                      ? "border-emerald-200/60 bg-emerald-500/30 text-emerald-50 shadow-[0_8px_24px_rgba(16,185,129,0.3)]"
-                      : "border-white/25 bg-white/10 text-slate-100 hover:bg-white/20"
+                      ? "border-amber-300/70 bg-amber-500/30 text-amber-50 shadow-[0_8px_24px_rgba(245,158,11,0.35)]"
+                      : "border-amber-300/40 bg-neutral-900 text-amber-100 hover:bg-neutral-800"
                   }`}
                 >
                   party nhi dugi
@@ -338,8 +338,8 @@ export default function Home() {
                   onClick={() => setPartyAnswer("yes")}
                   className={`flex-1 rounded-xl border px-3 py-2 text-xs font-semibold capitalize transition-all duration-300 sm:px-4 sm:text-sm ${
                     isPartyApproved
-                      ? "border-emerald-200/70 bg-emerald-500/30 text-emerald-50 shadow-[0_8px_24px_rgba(16,185,129,0.3)]"
-                      : "border-white/25 bg-white/10 text-slate-100 hover:bg-white/20"
+                      ? "border-amber-300/70 bg-amber-500/30 text-amber-50 shadow-[0_8px_24px_rgba(245,158,11,0.35)]"
+                      : "border-amber-300/40 bg-neutral-900 text-amber-100 hover:bg-neutral-800"
                   }`}
                 >
                   haa party de dugi
@@ -354,7 +354,7 @@ export default function Home() {
             type="button"
             onClick={prevStep}
             disabled={step === 0 || isAnimating}
-            className="rounded-full border border-white/30 bg-white/10 px-6 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-slate-100 shadow-[0_8px_25px_rgba(15,23,42,0.35)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/20 hover:shadow-[0_14px_28px_rgba(96,165,250,0.22)] disabled:cursor-not-allowed disabled:opacity-45"
+            className="rounded-full border border-amber-300/45 bg-neutral-900 px-6 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-amber-100 shadow-[0_8px_25px_rgba(245,158,11,0.2)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:bg-neutral-800 hover:shadow-[0_14px_28px_rgba(245,158,11,0.28)] disabled:cursor-not-allowed disabled:opacity-45"
           >
             Back
           </button>
@@ -363,7 +363,7 @@ export default function Home() {
               type="button"
               onClick={nextStep}
               disabled={isAnimating}
-              className="rounded-full border border-emerald-200/55 bg-linear-to-r from-emerald-500/55 to-teal-500/55 px-6 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-emerald-50 shadow-[0_10px_30px_rgba(16,185,129,0.38)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_36px_rgba(16,185,129,0.52)] disabled:opacity-60"
+              className="rounded-full border border-amber-300/60 bg-linear-to-r from-amber-500/65 to-yellow-500/65 px-6 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-amber-50 shadow-[0_10px_30px_rgba(245,158,11,0.4)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_36px_rgba(245,158,11,0.55)] disabled:opacity-60"
             >
               Next
             </button>
@@ -383,10 +383,10 @@ export default function Home() {
                 style={{
                   transform: `translate(${restartButtonOffset.x}px, ${restartButtonOffset.y}px)`,
                 }}
-                className={`absolute right-0 rounded-full border px-6 py-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-emerald-50 shadow-[0_10px_30px_rgba(16,185,129,0.38)] backdrop-blur-xl transition-all duration-300 sm:text-xs sm:tracking-[0.16em] ${
+                className={`absolute right-0 rounded-full border px-6 py-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-amber-50 shadow-[0_10px_30px_rgba(245,158,11,0.4)] backdrop-blur-xl transition-all duration-300 sm:text-xs sm:tracking-[0.16em] ${
                   isPartyApproved
-                    ? "border-emerald-200/55 bg-linear-to-r from-emerald-500/55 to-teal-500/55 hover:-translate-y-0.5 hover:shadow-[0_16px_36px_rgba(16,185,129,0.52)]"
-                    : "pointer-events-none border-white/25 bg-white/10 text-slate-300/90"
+                    ? "border-amber-300/60 bg-linear-to-r from-amber-500/65 to-yellow-500/65 hover:-translate-y-0.5 hover:shadow-[0_16px_36px_rgba(245,158,11,0.55)]"
+                    : "pointer-events-none border-amber-300/40 bg-neutral-900 text-amber-200/60"
                 }`}
               >
                 Restart Surprise
