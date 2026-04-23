@@ -15,7 +15,7 @@ const mediaItems: MediaItem[] = [
   { src: "/media/Snapchat-214975705.jpg", type: "image" },
   { src: "/media/Snapchat-275751804.jpg", type: "image" },
   { src: "/media/Snapchat-532917110.jpg", type: "image" },
-  { src: "/media/Snapchat-848168237.jpg", type: "image" },
+  { src: "/media/Snapchat-848168237.png", type: "image" },
   { src: "/media/Snapchat-819415499.mp4", type: "video" },
 ];
 
@@ -218,7 +218,7 @@ export default function Home() {
               </div>
               <div className="motion-card motion-right overflow-hidden rounded-2xl border border-amber-300/35 bg-neutral-800/85 p-3 shadow-[0_16px_40px_rgba(245,158,11,0.16)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1">
                 <Image
-                  src="/media/Snapchat-848168237.jpg"
+                  src="/media/Snapchat-848168237.png"
                   alt="Beauty portrait"
                   width={550}
                   height={700}
