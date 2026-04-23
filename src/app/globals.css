@@ -219,6 +219,86 @@ body::before {
   animation-delay: 140ms;
 }
 
+.media-card {
+  position: relative;
+  overflow: hidden;
+  animation: mediaSettle 760ms cubic-bezier(0.22, 0.82, 0.22, 1) both;
+}
+
+.media-direction-0 {
+  --from-x: -90px;
+  --from-y: -24px;
+  --from-rotate: -9deg;
+}
+
+.media-direction-1 {
+  --from-x: 0px;
+  --from-y: -95px;
+  --from-rotate: 7deg;
+}
+
+.media-direction-2 {
+  --from-x: 95px;
+  --from-y: -18px;
+  --from-rotate: 10deg;
+}
+
+.media-direction-3 {
+  --from-x: -90px;
+  --from-y: 70px;
+  --from-rotate: -8deg;
+}
+
+.media-direction-4 {
+  --from-x: 0px;
+  --from-y: 95px;
+  --from-rotate: 6deg;
+}
+
+.media-direction-5 {
+  --from-x: 90px;
+  --from-y: 68px;
+  --from-rotate: 9deg;
+}
+
+.media-star {
+  opacity: 0;
+  transform: scale(0.2);
+  animation: mediaStarBurst 620ms ease-out both;
+}
+
+@keyframes mediaSettle {
+  0% {
+    opacity: 0;
+    transform: translate(var(--from-x, 0px), var(--from-y, 24px)) rotate(var(--from-rotate, 0deg)) scale(0.92);
+    filter: blur(2px);
+  }
+  65% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(calc(var(--from-rotate, 0deg) * -0.2)) scale(1.02);
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes mediaStarBurst {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scale(0.2) rotate(0deg);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-24px) scale(1.12) rotate(20deg);
+  }
+}
+
 @keyframes settleFromLeft {
   0% {
     opacity: 0;

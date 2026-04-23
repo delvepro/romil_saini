@@ -20,6 +20,13 @@ const mediaItems: MediaItem[] = [
 ];
 
 const BIRTHDAY_TARGET_MS = new Date(2026, 3, 24, 0, 0, 0).getTime();
+const INITIAL_COUNTDOWN = {
+  days: 0,
+  hours: 0,
+  minutes: 0,
+  seconds: 0,
+  isDone: false,
+};
 
 function getCountdown(timerEndAt: number) {
   const now = new Date().getTime();
@@ -46,12 +53,13 @@ export default function Home() {
   const [partyAnswer, setPartyAnswer] = useState<"no" | "yes" | null>(null);
   const [restartButtonOffset, setRestartButtonOffset] = useState({ x: 0, y: 0 });
   const [timerEndAt, setTimerEndAt] = useState(BIRTHDAY_TARGET_MS);
-  const [countdown, setCountdown] = useState(() => getCountdown(BIRTHDAY_TARGET_MS));
+  const [countdown, setCountdown] = useState(INITIAL_COUNTDOWN);
   const imageMemories = mediaItems.filter((item) => item.type === "image");
   const videoMemories = mediaItems.filter((item) => item.type === "video");
   const isPartyApproved = partyAnswer === "yes";
 
   useEffect(() => {
+    setCountdown(getCountdown(timerEndAt));
     const timer = setInterval(() => {
       setCountdown(getCountdown(timerEndAt));
     }, 1000);
@@ -230,11 +238,26 @@ export default function Home() {
               Har photo mein tum aur bhi zyada pretty lagti ho.
             </p>
             <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {imageMemories.slice(0, 6).map((item) => (
+              {imageMemories.slice(0, 6).map((item, index) => (
                 <div
                   key={item.src}
-                  className="motion-card motion-up rounded-2xl border border-amber-300/35 bg-neutral-800/85 p-2 shadow-[0_14px_35px_rgba(245,158,11,0.16)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-amber-300/55 hover:shadow-[0_20px_45px_rgba(245,158,11,0.24)]"
+                  className={`media-card motion-card rounded-2xl border border-amber-300/35 bg-neutral-800/85 p-2 shadow-[0_14px_35px_rgba(245,158,11,0.16)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-amber-300/55 hover:shadow-[0_20px_45px_rgba(245,158,11,0.24)] media-direction-${index % 6}`}
                 >
+                  <div className="pointer-events-none absolute inset-0 overflow-hidden">
+                    {Array.from({ length: 5 }).map((_, starIndex) => (
+                      <span
+                        key={`${item.src}-star-${starIndex}`}
+                        className="media-star absolute text-sm text-amber-200"
+                        style={{
+                          left: `${12 + starIndex * 18}%`,
+                          top: `${18 + ((starIndex + index) % 3) * 26}%`,
+                          animationDelay: `${index * 0.08 + starIndex * 0.06}s`,
+                        }}
+                      >
+                        ✨
+                      </span>
+                    ))}
+                  </div>
                   <Image
                     src={item.src}
                     alt="Romil memory"
