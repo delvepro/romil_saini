@@ -203,8 +203,7 @@ export default function Home() {
                 <p className="mt-4 text-sm leading-relaxed text-amber-100/90 sm:text-base">
                   Pehli baat to ye ki tumhari smile ka level bilkul premium hai, full
                   heart-melting, aur tumhari vibe aisi hai ki boring se boring din bhi
-                  highlight reel ban jata hai. Tum jab room me aati ho to energy
-                  automatically upgrade ho jati hai, aur tumhari hasi ka timing itna
+                  highlight reel ban jata hai.aur tumhari hasi ka timing itna
                   perfect hota hai ki stand-up comedians bhi notes lene lag jaayein.
                   Sach me, tum cute bhi ho, classy bhi ho, aur funny bhi itni ho ki
                   mood ka low battery percent seedha 100 pe chala jata hai. Lekin ab
